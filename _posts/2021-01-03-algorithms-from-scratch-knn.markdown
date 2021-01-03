@@ -1,5 +1,5 @@
 ---
-title: "Algorithms from Scratch: KNN"
+title: "Algorithms from Scratch: K-Nearest Neighbors (KNN)"
 layout: post
 date: 2021-01-03
 image: 
@@ -13,16 +13,13 @@ author: aaron
 description: 
 ---
 
-## Algorithms from Scratch:
-# K-Nearest Neighbors (KNN)
-
 Despite virtually all statistical / machine learning algorithms being available as easily callable functions from open source libraries, I believe a strong working knowledge of the algorithms is still imperative. It has been a hobby of mine to code these algorithms from scratch to confirm and expand my working knowledge. I am going to start sharing some of this work in a series of blog posts. This first post will be on k-nearest neighbors.
 
 K-nearest neighbors is an algorithm that can be used for both classification and regression, although it is probably most commonly used for classification. The flow of the algorithm is nearly identical for continuous and categorical dependent variables. The only difference is how the nearest neighbors are combined to produce the final prediction.
 
 The process of k-nearest neighbors is:
 
-1. Compute the distance between every observation in the training dataset and every observation in the prediction dataset. The distance metric used in my version below is the Minkowski distance of order p. Minkowski distance of order p is $D(X, Y) = \sqrt(\sum_{i=1}^{n}(x_{i} - y_{i})^{2})$ where each *i* is a different feature of the observation vector.
+1. Compute the distance between every observation vector in the training dataset and every observation vector in the prediction dataset. The distance metric used in my version below is the Minkowski distance of order p.
 2. Select k observations from the training dataset for each observation in the prediction dataset. The k hyperparameter is either set in advance by the user or optimized through some search procedure. In this case, the k value is set to 5. The k observations are those with the minimum distances.
 3. Aggregate the k observations to produce the final predicted value for the observation vector in the prediction dataset. In the case of this classification example, make the prediction the category value that occurs most often in the k observations of the training dataset. For a regression problem, the output value from the k observations might instead be the mean average.
 
@@ -193,7 +190,7 @@ plt.show()
 ```
 
 
-![png](assets/images/algos_from_scratch_knn/output_12_0.png)
+![](/assets/images/algos_from_scratch_knn/output_12_0.png)
 
 
 The below spider plot describes the model performance in 6 different metrics. The high values for accuracy, F1, sensitivity, and specificity along with the low values for false negative rate and false positive rate confirm the quality of the model. It is possible further model refinement (i.e., adjusting the k value) could improve results, but this model is performing decently well. Again, model performance isn't the main concern here. The goal of these blog posts is digging into the internals of the algorithm, but it is good to confirm that the custom version of the algorithm works!
@@ -224,6 +221,6 @@ plt.show()
 ```
 
 
-![png](assets/images/algos_from_scratch_knn/output_14_0.png)
+![](/assets/images/algos_from_scratch_knn/output_14_0.png)
 
 
