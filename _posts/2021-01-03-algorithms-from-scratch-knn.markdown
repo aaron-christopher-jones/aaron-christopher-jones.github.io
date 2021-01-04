@@ -78,7 +78,7 @@ for name_, array_ in list_targets:
 ```
 
     Label order:   [0 1]
-    Target: Counts, Percentages:
+    Target: Counts, Percentages
     	Total: [357 210], [0.63 0.37]
     	Train: [288 166], [0.63 0.37]
     	Valid: [69 44], [0.61 0.39]
