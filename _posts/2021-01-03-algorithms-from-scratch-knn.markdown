@@ -71,7 +71,7 @@ Below are the category percentages. The percentages are needed for understanding
 ```python
 list_targets = [("Total", cancer.diag.values), ("Train", ytrain), ("Valid", yvalid)]
 print("Label order:   [0 1]")
-print("Target: Counts, Percentages:")
+print("Target: Counts, Percentages")
 for name_, array_ in list_targets:
     vals, cnts = np.unique(array_, return_counts=True)
     print("\t{0}: {1}, {2}".format(name_, cnts, np.around(cnts / len(array_), 2)))
